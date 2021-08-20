@@ -47,5 +47,6 @@ def simple_model():
 	return model
 model = simple_model()
 model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=10, batch_size=200, verbose=2)
+model.save('mnist.h5')
 scores = model.evaluate(x_test, y_test, verbose=0)
 print("Base error: %.2f%%" %(100 - scores[1]*100))
