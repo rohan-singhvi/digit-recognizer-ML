@@ -38,8 +38,8 @@ x_test /= 255
 # 'is_dafodil', 'is_lily', and 'is_rose' as 1s and 0s (in a 3x3, in this case, table)
 # for an example with out data, y_train[0] before the encoding is just '5',
 # however afterwards y_train becomes '[0, 0, 0, 0, 0, 1, 0, 0, 0, 0]'
-y_train = np_utils.to_categorical(y_train)
-y_test = np_utils.to_categorical(y_test)
+y_train = np_utils.to_categorical(y_train, num_classes=10)
+y_test = np_utils.to_categorical(y_test, num_classes=10)
 total_classes = y_test.shape[1]
 
 # creating a 2d convolutional neural network model, defined in a function for ease of use
